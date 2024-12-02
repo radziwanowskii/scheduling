@@ -27,7 +27,6 @@ public class Scheduling_IO {
         list_tutor = instance_tutor.returnList();
         list_student = instance_student.returnList();
 
-        //Algorithm algorithm = new Algorithm(list_tutor,list_student);
         Algorithm2 algorithm2 = new Algorithm2(list_tutor,list_student,exclude_16_18,excluded_slots,
          tutorials_per_tutor,min_students,max_students);
 
