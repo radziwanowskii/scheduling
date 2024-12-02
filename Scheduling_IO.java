@@ -22,12 +22,12 @@ public class Scheduling_IO {
         //Load the student data
         Read_Student_Data instance_student = new Read_Student_Data("P4_A2_Students.xlsx");
 
-        ArrayList<Tutor> list_tutor = new ArrayList<Tutor>();
-        ArrayList<Student> list_student = new ArrayList<Student>();
+        ArrayList<Tutor> list_tutor;
+        ArrayList<Student> list_student;
         list_tutor = instance_tutor.returnList();
         list_student = instance_student.returnList();
-
-        Algorithm2 algorithm2 = new Algorithm2(list_tutor,list_student,exclude_16_18,excluded_slots,
+// Run the algorithm
+        new Algorithm2(list_tutor,list_student,exclude_16_18,excluded_slots,
          tutorials_per_tutor,min_students,max_students);
 
     }

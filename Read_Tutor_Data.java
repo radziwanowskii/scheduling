@@ -1,5 +1,4 @@
 package org.scheduling;
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,19 +11,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Read_Tutor_Data
 {
-    ArrayList<Tutor> tutorList = new ArrayList<Tutor>();
+    ArrayList<Tutor> tutorList = new ArrayList<>();
 
     public Read_Tutor_Data(String filename) {
         try {
 
             int first_row = 0;
-            FileInputStream file = new FileInputStream(new File(filename));
+            FileInputStream file = new FileInputStream(filename);
             //Create Workbook instance holding reference to .xlsx file
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             //Get first/desired sheet from the workbook
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            //Iterate through each rows one by one
+            //Iterate through each row one by one
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext())
             {
@@ -45,7 +44,7 @@ public class Read_Tutor_Data
                                 name = cell.getStringCellValue();
                                 break;
 
-                            //maybe add smth here to ensure that noone leaves it empty
+                            //read the max amount of tutorials in
                             case 5:
                                 maxTutorials = (int) cell.getNumericCellValue();
                                 break;
