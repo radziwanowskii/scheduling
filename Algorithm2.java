@@ -26,13 +26,10 @@ public class Algorithm2 {
                     x[i][j] = cplex.numVarArray(20, 0, 1, IloNumVarType.Int);
                 }
             }
-//Y is the variable telling if the tutorial is taking place at time t
-// Z is the variable for stable groups, zij = 1 if student j has a tutorial with tutor i
+//y is the variable telling if the tutorial is taking place at time t
             IloNumVar[][] y = new IloNumVar[no_tutors][20];
-            IloNumVar[][] z = new IloNumVar[no_tutors][20];
             for(int i=0; i < no_tutors; i++) {
                 y[i] = cplex.numVarArray(20, 0, 1, IloNumVarType.Int);
-                z[i] = cplex.numVarArray(20, 0, 1, IloNumVarType.Int);
             }
 
 //adding whatever obj value so that cplex finds solution
@@ -51,15 +48,12 @@ public class Algorithm2 {
                 IloLinearNumExpr expr = cplex.linearNumExpr();
 
                 for(int t=0;t<20;t++) {
-
                     for(int i = 0; i< no_tutors; i++){
                         expr.addTerm(x[i][j][t], 1);
                     }
-
                 }
 
                 cplex.addEq(expr,1);
-
             }
 
             //Constraint, for each tutor and time slot, sum of students taking part must be smaller equal
@@ -173,7 +167,7 @@ public class Algorithm2 {
                 }
             }
                 if(excluded_slots.length > 0){
-                    for(int k = 0; k< excluded_slots.length; k++){
+                    for(int k = 0; k < excluded_slots.length; k++){
                         for (int i = 0; i < no_tutors; i++) {
                             Tutor tutor = tutorList.get(i);
                             //System.out.println(tutor.getName());

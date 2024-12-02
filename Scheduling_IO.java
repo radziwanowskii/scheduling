@@ -18,9 +18,9 @@ public class Scheduling_IO {
         int[] tutorials_per_tutor = {};
 
         //load the tutors data
-        Read_Tutor_Data instance_tutor = new Read_Tutor_Data("tutors_la_1.xlsx");
+        Read_Tutor_Data instance_tutor = new Read_Tutor_Data("P4_A2_Tutors.xlsx");
         //Load the student data
-        Read_Student_Data instance_student = new Read_Student_Data("students_la.xlsx");
+        Read_Student_Data instance_student = new Read_Student_Data("P4_A2_Students.xlsx");
 
         ArrayList<Tutor> list_tutor = new ArrayList<Tutor>();
         ArrayList<Student> list_student = new ArrayList<Student>();
