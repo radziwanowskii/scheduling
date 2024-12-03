@@ -167,9 +167,6 @@ public class Read_Student_Data
             e.printStackTrace();
         }
     }
-    public void print(){
-        System.out.println(studentList.size());
-    }
     public ArrayList<Student> returnList(){
         return studentList;
     }

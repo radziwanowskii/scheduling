@@ -120,12 +120,9 @@ public class Algorithm2 {
             }
 
             // Days excluded from the consideration
-            if(exclude_16_18 == true) {
+            if(exclude_16_18) {
                 //Days when I don't want tutorials - Every day 16-18 + customs
                 for (int i = 0; i < no_tutors; i++) {
-                    Tutor tutor = tutorList.get(i);
-                    //System.out.println(tutor.getName());
-                    int[] time = tutor.getTime();
                     IloLinearNumExpr expr = cplex.linearNumExpr();
 
                     expr.addTerm(y[i][3], 1);
@@ -139,9 +136,6 @@ public class Algorithm2 {
                 if(excluded_slots.length > 0){
                     for(int k = 0; k < excluded_slots.length; k++){
                         for (int i = 0; i < no_tutors; i++) {
-                            Tutor tutor = tutorList.get(i);
-                            //System.out.println(tutor.getName());
-                            int[] time = tutor.getTime();
                             IloLinearNumExpr expr = cplex.linearNumExpr();
 
                             for (int j = 0; j < studentList.size(); j++) {
