@@ -12,7 +12,7 @@ public class Scheduling_IO {
         // Minimum amount of students in a tutorial (default 3)
         int min_students = 3;
         // Maximal amount of students in a tutorial (default 5)
-        int max_students = 6;
+        int max_students = 5;
         // how many tutorials should each tutor have? length of this array should be equal to the number of tutors
         // if you leave this array empty, by default each tutor is supposed to have at least one tutorial
         int[] tutorials_per_tutor = {};

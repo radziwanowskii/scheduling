@@ -30,7 +30,7 @@ public class Read_Tutor_Data
                 Row row = rowIterator.next();
                 String name = " ";
 
-                int maxTutorials = 3;
+                int maxTutorials = 10;
                 int[] time = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
                 //exclude the first row with the column names

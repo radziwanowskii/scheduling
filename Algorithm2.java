@@ -118,37 +118,7 @@ public class Algorithm2 {
                 }
                 cplex.addEq(expr,0);
             }
-            /*
-            // Days excluded from the consideration
-                if(exclude_16_18 == true) {
-                    //Days when I don't want tutorials - Every day 16-18 + customs
-                    for (int i = 0; i < no_tutors; i++) {
-                        Tutor tutor = tutorList.get(i);
-                        //System.out.println(tutor.getName());
-                        int[] time = tutor.getTime();
-                        IloLinearNumExpr expr = cplex.linearNumExpr();
 
-                        //System.out.println(t);
-                        for (int j = 0; j < studentList.size(); j++) {
-                            expr.addTerm(x[i][j][3], 1);
-                        }
-                        for (int j = 0; j < studentList.size(); j++) {
-                            expr.addTerm(x[i][j][7], 1);
-                        }
-                        for (int j = 0; j < studentList.size(); j++) {
-                            expr.addTerm(x[i][j][11], 1);
-                        }
-                        for (int j = 0; j < studentList.size(); j++) {
-                            expr.addTerm(x[i][j][15], 1);
-                        }
-                        for (int j = 0; j < studentList.size(); j++) {
-                            expr.addTerm(x[i][j][19], 1);
-                        }
-                        cplex.addEq(expr, 0);
-                    }
-                }
-
-             */
             // Days excluded from the consideration
             if(exclude_16_18 == true) {
                 //Days when I don't want tutorials - Every day 16-18 + customs
